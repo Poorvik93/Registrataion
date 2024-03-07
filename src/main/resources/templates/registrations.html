@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registrations</title>
+</head>
+<body>
+    <h2>Registrations</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="registration : ${registrations}">
+            <td th:text="${registration.id}"></td>
+            <td th:text="${registration.name}"></td>
+            <td th:text="${registration.email}"></td>
+            <td th:text="${registration.dateOfBirth}"></td>
+            <td>
+                <a th:href="@{/registrations/{id}(id=${registration.id})}">View</a> |
+                <a th:href="@{/registrations/edit/{id}(id=${registration.id})}">Edit</a> |
+                <a th:href="@{/registrations/delete/{id}(id=${registration.id})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+    <br/>
+    <a th:href="@{/registrations/new}">Add New Registration</a>
+</body>
+</html>

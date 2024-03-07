@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registration Details</title>
+</head>
+<body>
+    <h2>Registration Details</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+        </tr>
+        <tr>
+            <td th:text="${registration.id}"></td>
+            <td th:text="${registration.name}"></td>
+            <td th:text="${registration.email}"></td>
+            <td th:text="${registration.dateOfBirth}"></td>
+        </tr>
+    </table>
+    <br/>
+    <a th:href="@{/registrations}">Back to </a>
+</body>
+</html>
